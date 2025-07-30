@@ -1,6 +1,6 @@
 👋 Hello! I'm Emmanuel Kasakalawe, a dedicated software developer with a strong passion for creating clean, efficient, and scalable applications.
 
-💻 Skilled in full-stack development using modern technologies like Python, JavaScript, and frameworks such as Django and React.
+💻 Skilled in full-stack development using modern technologies like php, JavaScript, and frameworks such as laravel .
 
 🌍 I enjoy solving complex problems and turning ideas into reliable software solutions that improve user experiences.
 
