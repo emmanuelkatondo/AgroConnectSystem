@@ -21,7 +21,6 @@ Route::post('/logout', [MainController::class, 'logout'])->name('logout');
 Route::post('/seller/upload', [MainController::class, 'uploadProduct'])->name('seller.upload');
 Route::post('/change-password', [MainController::class, 'changePassword'])->name('changePassword');
 
-//Route::get('/buyer/dashboard', [DashboardController::class, 'index'])->name('buyer.index');
 Route::post('/buyer/place-order', [MainController::class, 'store'])->name('buyer.placeOrder');
 Route::post('/buyer/cancel-order/{id}', [MainController::class, 'cancelOrder'])->name('buyer.cancelOrder');
 
