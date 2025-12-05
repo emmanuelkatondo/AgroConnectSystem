@@ -1,10 +1,7 @@
-👋 Hello! I'm Emmanuel Kasakalawe, a dedicated software developer with a strong passion for creating clean, efficient, and scalable applications.
+I'm Emmanuel Kasakalawe, a dedicated software developer with a strong passion for creating clean, efficient, and scalable applications.
 
-💻 Skilled in full-stack development using modern technologies like php, JavaScript, and frameworks such as laravel .
+Skilled in backend development using modern technologies like python,php, JavaScript,java, and frameworks such as laravel ,django and kotlin .
+this project focus much on helping farmers and buyers by connecting them together  so ass can have broader rooms for get good market for  selling and buying agricutral crops mainly maize,rice, 
 
-🌍 I enjoy solving complex problems and turning ideas into reliable software solutions that improve user experiences.
-
-📚 Constantly learning and exploring new tools and best practices to stay updated in the fast-changing tech world.
-
-🤝 Open to collaboration, contributing to open source projects, and connecting with fellow developers.
+ Open to collaboration, contributing to open source projects, and connecting with fellow developers.
 follow me via katondo314@gmail.com
