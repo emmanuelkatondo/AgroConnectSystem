@@ -133,14 +133,13 @@ public function uploadProduct(Request $request)
     $product->seller_id = Auth::user()->id;
     $product->price = $request->price;
     $product->quantity = $request->quantity;
-    // Check kama kuna image ime-uploadiwa
+    //to check if product image is uploaded
     if ($request->hasFile('image')) {
         $image = $request->file('image');
-        $product->image = file_get_contents($image); // Soma contents za picha
+        $product->image = file_get_contents($image); 
     }
     $product->save();
 
-    // Redirect back with a success message
     return redirect()->back()->with('success', 'Product uploaded successfully!');
 }
 public function editProduct(Request $request)
@@ -216,7 +215,6 @@ public function changePassword(Request $request)
     if (!Hash::check($request->current_password, Auth::user()->password)) {
         return back()->withErrors(['current_password' => 'The current password is incorrect.']);
     }
-    /** @var \App\Models\User $user */
     $user = Auth::user();
     $user->password = Hash::make($request->password); // Manually hash the password
     $user->save();
