@@ -173,7 +173,6 @@
     </div>
 </div>
 
-<!-- Modals -->
 <!-- Upload Product Modal -->
 <div class="modal fade" id="uploadProductModal" tabindex="-1">
     <div class="modal-dialog">
@@ -341,7 +340,7 @@
                         <tfoot>
                             <tr>
                                 <th colspan="7" class="text-end">Grand Total:</th>
-                                <th>{{ $grandTotal }} TZS</th> <!-- Display the grand total -->
+                                <th>{{ $grandTotal }} TZS</th> 
                                 <th colspan="2"></th>
                             </tr>
                         </tfoot>
