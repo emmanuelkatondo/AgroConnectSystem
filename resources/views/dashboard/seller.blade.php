@@ -441,7 +441,7 @@
         </div>
     </div>
 </div>
-<!-- Scripts -->
+
 <script src="/build/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script>
     const sidebar = document.getElementById('sidebar');
@@ -482,24 +482,16 @@
     const deleteConfirmModal = document.getElementById('deleteConfirmModal');
     deleteConfirmModal.addEventListener('show.bs.modal', function (event) {
         const button = event.relatedTarget;
-
-        // Extract product ID from data-* attributes
         const productId = button.getAttribute('data-id');
-
-        // Populate the hidden input field
         document.getElementById('deleteProductId').value = productId;
     });
-
-     //change password modal
      const resetPasswordModal = document.getElementById('resetPasswordModal');
-    resetPasswordModal.addEventListener('show.bs.modal', function (event) {
+     resetPasswordModal.addEventListener('show.bs.modal', function (event) {
         const button = event.relatedTarget;
 
-        // Extract user data from data-* attributes
         const userId = button.getAttribute('data-id');
         const userName = button.getAttribute('data-name');
-
-        // Populate the modal fields
+         
         document.getElementById('resetUserId').value = userId;
         document.getElementById('resetUserName').value = userName;
     });
