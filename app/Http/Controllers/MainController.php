@@ -106,7 +106,7 @@ class MainController extends Controller
     public function deleteUser(Request $request){
     $user = User::findOrFail($request->id);
 
-    // Prevent admin from deleting their own account (optional)
+    // Prevent admin from deleting their own account 
     if (Auth::id() === $user->id) {
         return back()->with('error', 'You cannot delete your own account.');
     }
@@ -197,7 +197,6 @@ public function cancelOrder($id)
         $product = $order->product;
         $product->quantity += $order->quantity;
         $product->save();
-        // Delete the order
         $order->delete();
         return redirect()->back()->with('success', 'Order cancelled successfully.');
     }
@@ -216,7 +215,7 @@ public function changePassword(Request $request)
         return back()->withErrors(['current_password' => 'The current password is incorrect.']);
     }
     $user = Auth::user();
-    $user->password = Hash::make($request->password); // Manually hash the password
+    $user->password = Hash::make($request->password);
     $user->save();
     return back()->with('success', 'Password changed successfully!');
 }
@@ -303,9 +302,6 @@ public function editUser(Request $request)
         'name' => 'required|string|max:255',
         'email' => 'required|email|max:255|unique:users,email,' . $request->id,//exclude the current user from the unique check
     ]);
-
-    /** @var \App\Models\User $user */
-    // Update the user's details
     $user = User::findOrFail($request->id);
     $user->first_name = $request->name;
     $user->email = $request->email;
@@ -316,13 +312,11 @@ public function editUser(Request $request)
 public function resetPassword(Request $request)
 {
     $request->validate([
-        'id' => 'required|exists:users,id', // Ensure the user ID exists
-        'password' => 'required|string|min:4|confirmed', // Validate the new password
+        'id' => 'required|exists:users,id', 
+        'password' => 'required|string|min:4|confirmed', 
     ]);
 
-    // Find the user by ID
     $user = User::findOrFail($request->id);
-    // Update the user's password
     $user->password = bcrypt($request->password);
     $user->save();
     return redirect()->back()->with('success', 'Password reset successfully.');
@@ -330,7 +324,6 @@ public function resetPassword(Request $request)
 
 public function viewOrders()
 {
-    // Fetch orders for products belonging to the authenticated seller
     $orders = Order::whereHas('product', function ($query) {
         $query->where('seller_id', Auth::id());
     })->with(['product', 'buyer.region'])->get();
@@ -338,11 +331,10 @@ public function viewOrders()
 }
 
 public function approveOrder(Order $order)
-{// Ensure the order belongs to the authenticated seller's product
+{
     if ($order->product->seller_id !== Auth::id()) {
         abort(403, 'Unauthorized action.');
     }
-    // Update the order status to 'approved'
     $order->update(['status' => 'approved']);
     return redirect()->back()->with('success', 'Order approved successfully.');
 }
