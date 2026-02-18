@@ -57,7 +57,6 @@ class MainController extends Controller
         return redirect('/login')->with('success', 'Account created successfully!');
     }
         public function login(Request $request){
-        // Validate login fields
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -68,8 +67,6 @@ class MainController extends Controller
                 return redirect()->route('dashboard');
             
         }
-
-        // Login failed
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
