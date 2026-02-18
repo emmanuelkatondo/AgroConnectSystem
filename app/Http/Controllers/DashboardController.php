@@ -1,6 +1,5 @@
 <?php
 namespace App\Http\Controllers;
-
 use App\Models\District;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -8,7 +7,6 @@ use App\Models\Product;
 use App\Models\Order;
 use App\Models\Role;
 use App\Models\Region;
-
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -22,7 +20,6 @@ class DashboardController extends Controller
             $regions = Region::all();
             $products = Product::all();
             $orders = Order::with(['buyer', 'product'])->get();
-            // Pass data to the admin view
             return view('dashboard.admin', compact('users', 'products', 'orders', 'regions'));
         } elseif ($user->role_id === 2) { 
             $users = User::with('role')->get();
