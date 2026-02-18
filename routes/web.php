@@ -36,10 +36,8 @@ Route::post('/seller/orders/{order}/approve', [MainController::class, 'approveOr
 Route::post('/admin/delete-user/{id}', [MainController::class, 'deleteUser'])->name('deleteUser');
 Route::post('/admin/edit-user', [MainController::class, 'editUser'])->name('editUser');
 Route::post('/admin/reset-password', [MainController::class, 'resetPassword'])->name('resetPassword');
-// Routes for products
 Route::post('/admin/edit-product', [MainController::class, 'editProduct'])->name('admin.editProduct');
 Route::post('/admin/delete-product/{id}', [MainController::class, 'deleteProduct'])->name('admin.deleteProduct');
-// Routes for orders
 Route::post('/admin/orders/edit', [MainController::class, 'editOrder'])->name('admin.editOrder');
 Route::post('/admin/orders/delete', [MainController::class, 'deleteOrder'])->name('admin.deleteOrder');
 
