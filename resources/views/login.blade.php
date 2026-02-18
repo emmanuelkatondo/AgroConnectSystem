@@ -211,7 +211,6 @@
         formSlider.style.transform = 'translateX(0)';
     }
 
-    // Show password format requirements
     function showPasswordFormat() {
         alert("Password must be at least 4 characters long and include:\n- Uppercase letters\n- Lowercase letters\n- Numbers\n- Special characters");
     }
@@ -224,31 +223,24 @@
         const phone = document.getElementById('phone').value.trim();
         const password = document.getElementById('password').value.trim();
 
-        // Name validation
         const nameRegex = /^[A-Za-z]{3,20}$/;
         if (!nameRegex.test(firstName) || !nameRegex.test(lastName)) {
             alert("Names must contain only letters and be between 3 and 20 characters.");
             e.preventDefault();
             return;
         }
-
-        // Email validation
         const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
         if (!emailRegex.test(email)) {
             alert("Email must be a valid Gmail address.");
             e.preventDefault();
             return;
         }
-
-        // Phone number validation
         const phoneRegex = /^(?:\+255|0)(6|7)\d{8}$/;
         if (!phoneRegex.test(phone)) {
             alert("Phone number must be valid and from Vodacom, Airtel, Tigo, or Halotel.");
             e.preventDefault();
             return;
         }
-
-        // Password validation
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,}$/;
         if (!passwordRegex.test(password)) {
             alert("Password must be at least 4 characters long and include uppercase, lowercase, numbers, and special characters.");
