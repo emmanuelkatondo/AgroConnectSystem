@@ -31,12 +31,12 @@ AgroConnect bridges this gap by providing a centralized digital platform for agr
 - Java
 
 Frontend
-HTML
-CSS
-JavaScript
-Bootstrap
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
 
 Database
-mysql
+- mysql
 
 
